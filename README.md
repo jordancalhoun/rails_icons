@@ -2,11 +2,7 @@
 
 Embed any library's icon in your Rails app. There are many icon gems for Rails already, but none are library-agnostic. This means you need to pull in other gems or add your logic to display that one specific icon.
 
-Supported libraries:
-
-- [Heroicons](https://heroicons.com/)
-- [Lucide Icons](https://lucide.dev/)
-- [more coming…](https://github.com/rails-designer/rails_icons/issues)
+The first-party supported icons are stored in a seperate repo: [rails_icons_vault](https://github.com/Rails-Designer/rails_icons_vault). This allows you to pull in only the icon libraries you need, keeping the rails_icons gem lean and lightweight.
 
 
 ## Sponsored By [Rails Designer](https://railsdesigner.com/)
@@ -14,6 +10,7 @@ Supported libraries:
 <a href="https://railsdesigner.com/" target="_blank">
   <img src="https://raw.githubusercontent.com/Rails-Designer/rails_icons/main/docs/rails_designer_icon.jpg" alt="Rails Designer logo"  width="300" />
 </a>
+
 
 ## Install
 
@@ -27,6 +24,13 @@ And run:
 
 ```bash
 bundle
+```
+
+Sync any of the supported icon libraries from the
+[rails_icons_vault](https://github.com/Rails-Designer/rails_icons_vault):
+
+```bash
+rails generate rails_icons:sync heroicons
 ```
 
 
@@ -55,8 +59,8 @@ icon "check", stroke_width: 2
 ```ruby
 RailsIcons.configure do |config|
   # Set the default set for the library
-  config.default_library = "heroicons" # https://heroicons.com/
-  config.default_set = "outline" # other sets for Heroicons are: solid, mini, micro
+  config.default_library = "heroicons"
+  config.default_set = "outline"
 
   config.libraries.heroicons.solid.default.css = "w-6 h-6"
   config.libraries.heroicons.solid.default.data = {}
