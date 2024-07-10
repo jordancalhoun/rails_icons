@@ -77,6 +77,6 @@ class RailsIcons::Icon
       .libraries
       .dig("custom")
       &.with_indifferent_access
-      &.dig(@library, set)
+      &.dig(@library, set) || {}
   end
 end
