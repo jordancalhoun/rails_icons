@@ -25,37 +25,18 @@ class RailsIcons::Icon
   end
 
   def file_path
-    if custom_library?
-      Rails.root.join(custom_path, "#{@name}.svg")
-    else
-      RailsIcons::Engine
-        .root
-        .join(RailsIcons.icons_directory, @library, set, "#{@name}.svg")
-    end
+    custom_library.dig("path") ||
+      Rails.root.join("app", "assets", "svg", "icons", @library, set, "#{@name}.svg")
   end
 
   def custom_library?
     custom_library.present?
   end
 
-  def custom_path
-    custom_library.dig("path") ||
-      Rails.root.join("app", "assets", "svg", @library, set)
-  end
-
   def attach_attributes(to:)
     RailsIcons::Icon::Attributes
       .new(default_attributes: default_attributes, args: @args)
       .attach(to: to)
-  end
-
-  def custom_library
-    RailsIcons
-      .configuration
-      .libraries
-      .dig("custom")
-      &.with_indifferent_access
-      &.dig(@library, set)
   end
 
   def default_attributes
@@ -88,5 +69,14 @@ class RailsIcons::Icon
     return custom_library || {} if custom_library?
 
     RailsIcons.configuration.libraries.dig(@library, set) || {}
+  end
+
+  def custom_library
+    RailsIcons
+      .configuration
+      .libraries
+      .dig("custom")
+      &.with_indifferent_access
+      &.dig(@library, set) || {}
   end
 end
