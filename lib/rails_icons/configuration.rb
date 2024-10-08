@@ -34,6 +34,7 @@ module RailsIcons
 
       heroicons_config
       lucide_config
+      tabler_config
     end
 
     def heroicons_config
@@ -69,6 +70,16 @@ module RailsIcons
       @config.libraries.lucide.outline.default.stroke_width = 2
       @config.libraries.lucide.outline.default.css = "w-6 h-6"
       @config.libraries.lucide.outline.default.data = {}
+    end
+
+    def tabler_config
+      @config.libraries.tabler = ActiveSupport::OrderedOptions.new
+
+      @config.libraries.tabler.outline = ActiveSupport::OrderedOptions.new
+      @config.libraries.tabler.outline.default = ActiveSupport::OrderedOptions.new
+      @config.libraries.tabler.outline.default.stroke_width = 2
+      @config.libraries.tabler.outline.default.css = "w-6 h-6"
+      @config.libraries.tabler.outline.default.data = {}
     end
   end
 end
