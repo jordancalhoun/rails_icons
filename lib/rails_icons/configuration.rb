@@ -75,6 +75,11 @@ module RailsIcons
     def tabler_config
       @config.libraries.tabler = ActiveSupport::OrderedOptions.new
 
+      @config.libraries.tabler.solid = ActiveSupport::OrderedOptions.new
+      @config.libraries.tabler.solid.default = ActiveSupport::OrderedOptions.new
+      @config.libraries.tabler.solid.default.css = "w-6 h-6"
+      @config.libraries.tabler.solid.default.data = {}
+      
       @config.libraries.tabler.outline = ActiveSupport::OrderedOptions.new
       @config.libraries.tabler.outline.default = ActiveSupport::OrderedOptions.new
       @config.libraries.tabler.outline.default.stroke_width = 2
