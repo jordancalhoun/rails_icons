@@ -1,3 +1,5 @@
+# frozen_string_literal: true
+
 module RailsIcons
   class Icon
     class Attributes
@@ -32,7 +34,7 @@ module RailsIcons
       end
 
       def format_attribute_name(name)
-        name.tr("_", "-")
+        name.tr('_', '-')
       end
     end
   end
