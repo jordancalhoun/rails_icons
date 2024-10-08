@@ -4,7 +4,7 @@ module RailsIcons
   class SyncGenerator < Rails::Generators::Base
     ICON_VAULT_REPO_URL = "https://github.com/Rails-Designer/rails_icons_vault.git".freeze
 
-    argument :libraries, type: :array, default: [], banner: "heroicons lucide"
+    argument :libraries, type: :array, default: [], banner: "heroicons lucide tabler"
 
     class_option :destination, type: :string, default: nil, desc: "Custom destination folder for icons (default: `app/assets/svg/icons/`)"
 
