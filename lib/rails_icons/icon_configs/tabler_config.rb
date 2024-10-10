@@ -25,7 +25,7 @@ module RailsIcons
 
     def default_filled_options
       options = ActiveSupport::OrderedOptions.new
-      options.css = 'w-6 h-6'
+      options.css = "w-6 h-6"
       options.data = {}
       options
     end
@@ -33,7 +33,7 @@ module RailsIcons
     def default_outline_options
       options = ActiveSupport::OrderedOptions.new
       options.stroke_width = 2
-      options.css = 'w-6 h-6'
+      options.css = "w-6 h-6"
       options.data = {}
       options
     end

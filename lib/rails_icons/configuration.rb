@@ -1,8 +1,8 @@
 # frozen_string_literal: true
 
-require_relative 'icon_configs/heroicons_config'
-require_relative 'icon_configs/lucide_config'
-require_relative 'icon_configs/tabler_config'
+require_relative "icon_configs/heroicons_config"
+require_relative "icon_configs/lucide_config"
+require_relative "icon_configs/tabler_config"
 
 module RailsIcons
   # Configuration defines the available configuration options available for each of the icons sets
@@ -30,9 +30,9 @@ module RailsIcons
     private
 
     def set_default_config
-      @config.helper_name = 'icon'
-      @config.default_library = 'heroicons'
-      @config.default_set = 'outline'
+      @config.helper_name = "icon"
+      @config.default_library = "heroicons"
+      @config.default_set = "outline"
     end
 
     def set_libraries_config

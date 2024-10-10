@@ -19,8 +19,8 @@ module RailsIcons
 
     def default_outlined_options
       options = ActiveSupport::OrderedOptions.new
-      options.stroke_width = '1.5'
-      options.css = 'w-6 h-6'
+      options.stroke_width = "1.5"
+      options.css = "w-6 h-6"
       options.data = {}
       options
     end

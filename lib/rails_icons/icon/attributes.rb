@@ -34,7 +34,7 @@ module RailsIcons
       end
 
       def format_attribute_name(name)
-        name.tr('_', '-')
+        name.tr("_", "-")
       end
     end
   end

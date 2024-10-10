@@ -36,7 +36,7 @@ module RailsIcons
 
     def default_solid_options
       options = ActiveSupport::OrderedOptions.new
-      options.css = 'w-6 h-6'
+      options.css = "w-6 h-6"
       options.data = {}
       options
     end
@@ -44,21 +44,21 @@ module RailsIcons
     def default_outline_options
       options = ActiveSupport::OrderedOptions.new
       options.stroke_width = 1.5
-      options.css = 'w-6 h-6'
+      options.css = "w-6 h-6"
       options.data = {}
       options
     end
 
     def default_mini_options
       options = ActiveSupport::OrderedOptions.new
-      options.css = 'w-5 h-5'
+      options.css = "w-5 h-5"
       options.data = {}
       options
     end
 
     def default_micro_options
       options = ActiveSupport::OrderedOptions.new
-      options.css = 'w-4 h-4'
+      options.css = "w-4 h-4"
       options.data = {}
       options
     end
