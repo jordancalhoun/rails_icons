@@ -40,7 +40,7 @@ module RailsIcons
 
       @config.libraries.heroicons = HeroiconsConfig.new.config
       @config.libraries.lucide = LucideConfig.new.config
-      @config.libraries.heroicons = TablerConfig.new.config
+      @config.libraries.tabler = TablerConfig.new.config
     end
   end
 end
