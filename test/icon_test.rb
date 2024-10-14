@@ -34,6 +34,12 @@ class IconTest < ActiveSupport::TestCase
     end
   end
 
+  test "using tabler library, it returns a SVG" do
+    assert_nothing_raised do
+      icon("thumbs-up", library: "tabler")
+    end
+  end
+
   private
 
   def icon(name, library: "heroicons", set: "outline", **args)
