@@ -10,12 +10,6 @@ class IconTest < ActiveSupport::TestCase
     refute_match(/height=/i, icon("academic-cap"), "SVG should not contain a 'height' attribute")
   end
 
-  test "it raises RailsIcons::NotFound error" do
-    assert_raises(RailsIcons::NotFound) do
-      icon("non-existing-icon")
-    end
-  end
-
   test "it returns a SVG with custom class" do
     assert_match(/class="w-4 h-4"/, icon("academic-cap", class: "w-4 h-4"), "SVG should contain 'class=\"w-h h-4\"'")
   end
@@ -28,6 +22,18 @@ class IconTest < ActiveSupport::TestCase
     assert_match(/stroke-width="3"/, icon("academic-cap", stroke_width: 3), "SVG should contain 'stroke-width=\"3\"'")
   end
 
+  test "setting set, it returns a SVG" do
+    assert_nothing_raised do
+      icon("academic-cap", set: "mini")
+    end
+  end
+
+  test "setting set as symbol, it returns a SVG" do
+    assert_nothing_raised do
+      icon("academic-cap", set: :mini)
+    end
+  end
+
   test "using lucide library, it returns a SVG" do
     assert_nothing_raised do
       icon("graduation-cap", library: "lucide")
@@ -37,6 +43,12 @@ class IconTest < ActiveSupport::TestCase
   test "using tabler library, it returns a SVG" do
     assert_nothing_raised do
       icon("thumbs-up", library: "tabler")
+    end
+  end
+
+  test "it raises RailsIcons::NotFound error" do
+    assert_raises(RailsIcons::NotFound) do
+      icon("non-existing-icon")
     end
   end
 
