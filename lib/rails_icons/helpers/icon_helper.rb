@@ -10,7 +10,7 @@ module RailsIcons
         RailsIcons::Icon.new(
           name: name,
           library: library,
-          set: set,
+          set: set.to_s,
           args: args
         ).svg
       end
