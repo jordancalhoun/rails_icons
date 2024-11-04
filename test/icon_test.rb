@@ -34,6 +34,12 @@ class IconTest < ActiveSupport::TestCase
     end
   end
 
+  test "setting variant, it returns a SVG" do
+    assert_nothing_raised do
+      icon("academic-cap", variant: "outline")
+    end
+  end
+
   test "using lucide library, it returns a SVG" do
     assert_nothing_raised do
       icon("graduation-cap", library: "lucide")
