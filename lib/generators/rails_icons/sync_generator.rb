@@ -9,20 +9,20 @@ module RailsIcons
       heroicons: {
         name: "heroicons",
         repo_url: "https://github.com/tailwindlabs/heroicons.git",
-        icon_dir: "src/24",
-        dir_wrapper: ""
+        source_dir: "src/24",
+        parent_dir: ""
       },
       tabler: {
         name: "tabler",
         repo_url: "https://github.com/tabler/tabler-icons.git",
-        icon_dir: "icons",
-        dir_wrapper: ""
+        source_dir: "icons",
+        parent_dir: ""
       },
       lucide: {
         name: "lucide",
         repo_url: "https://github.com/lucide-icons/lucide.git",
-        icon_dir: "icons",
-        dir_wrapper: "/outline"
+        source_dir: "icons",
+        parent_dir: "/outline"
       }
     }.freeze
 

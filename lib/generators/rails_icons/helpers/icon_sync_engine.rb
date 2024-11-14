@@ -7,7 +7,7 @@ module RailsIcons
   class IconSyncEngine < Rails::Generators::Base
     def initialize(temp_dir, repository)
       super
-      @temp_dir = File.join(temp_dir, repository[:name], repository[:dir_wrapper])
+      @temp_dir = File.join(temp_dir, repository[:name], repository[:parent_dir])
       @repository = repository
     end
 
@@ -36,34 +36,28 @@ module RailsIcons
     # Clone the given repo into temp_dir/<Icon set name>
     def clone_repo
       raise "Failed to clone Icon repository" unless system("git clone '#{@repository[:repo_url]}' '#{@temp_dir}'")
-
       say "Icon set cloned successfully", :green
     end
 
     def filter_icons_from_repo
       raise "Failed to find the icons directory: '#{icons_dir}'" unless Dir.exist?(icons_dir)
-
       # Store the list of current items in the root directory for reference
       # when deleting files later
-      original_temp_dir_items = Dir.entries(@temp_dir) - [".", ".."]
-
+      original_temp_dir_items = Dir.entries(@temp_dir) - [ ".", ".." ]
       move_icons
-
       # Remove everything in the root directory (@temp_dir) that was originally there
       remove_files_and_folders(original_temp_dir_items)
-
       say "Icons filtered from repository successfully.", :green
     end
 
     def icons_dir
-      File.join(@temp_dir, @repository[:icon_dir])
+      File.join(@temp_dir, @repository[:source_dir])
     end
 
     def move_icons
       # Move all contents of the icons directory to the parent directory (temp_dir)
       Dir.foreach(icons_dir) do |item|
-        next if [".", ".."].include?(item) # Skip special directories
-
+        next if [ ".", ".." ].include?(item) # Skip special directories
         item_path = File.join(icons_dir, item)
         # Move the item to the temp_dir (root level)
         FileUtils.mv(item_path, @temp_dir)
