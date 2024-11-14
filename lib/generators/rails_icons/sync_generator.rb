@@ -9,20 +9,27 @@ module RailsIcons
       heroicons: {
         name: "heroicons",
         repo_url: "https://github.com/tailwindlabs/heroicons.git",
-        source_dir: "src/24",
-        parent_dir: ""
+        variants: {
+          outline: "optimized/24/outline",
+          solid: "optimized/24/solid",
+          mini: "optimized/20/solid",
+          micro: "optimized/16/solid"
+        }
       },
       tabler: {
         name: "tabler",
         repo_url: "https://github.com/tabler/tabler-icons.git",
-        source_dir: "icons",
-        parent_dir: ""
+        variants: {
+          filled: "icons/filled",
+          outline: "icons/outline"
+        }
       },
       lucide: {
         name: "lucide",
         repo_url: "https://github.com/lucide-icons/lucide.git",
-        source_dir: "icons",
-        parent_dir: "/outline"
+        variants: {
+          outline: "icons"
+        }
       }
     }.freeze
 
