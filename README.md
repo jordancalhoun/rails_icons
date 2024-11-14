@@ -110,6 +110,11 @@ icon "reddit", library: "simple_icons", set: "solid"
 ```
 
 
+## Contributing
+
+This project uses [Standard](https://github.com/testdouble/standard) for formatting Ruby code. Please make sure to run `be standardrb` before submitting pull requests. Run tests via `rails test`.
+
+
 ## License
 
 Rails Icons is released under the [MIT License](https://opensource.org/licenses/MIT).
