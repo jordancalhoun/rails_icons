@@ -31,7 +31,7 @@ module RailsIcons
     class_option :destination, type: :string, default: nil,
       desc: "Custom destination folder for icons (default: `app/assets/svg/icons/`)"
 
-    desc "Sync a specified icon set(s) from the Rails Icons Vault (https://github.com/Rails-Designer/rails_icons_vault)"
+    desc "Sync a specified icon set(s) from their respective git repos."
     source_root File.expand_path("templates", __dir__)
 
     def sync_icons
