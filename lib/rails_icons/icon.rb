@@ -4,7 +4,7 @@ class RailsIcons::Icon
   def initialize(name:, library:, set:, args:)
     @name = name
     @library = library.to_s
-    @set = set
+    @set = set.to_s
     @args = args
   end
 
