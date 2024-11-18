@@ -62,17 +62,17 @@ RailsIcons.configure do |config|
   config.default_library = "heroicons"
   config.default_set = "outline"
 
-  config.libraries.heroicons.solid.default.css = "w-6 h-6"
+  config.libraries.heroicons.solid.default.css = "size-6"
   config.libraries.heroicons.solid.default.data = {}
 
-  config.libraries.heroicons.outline.default.css = "w-6 h-6"
+  config.libraries.heroicons.outline.default.css = "size-6"
   config.libraries.heroicons.outline.default.stroke_width = "1.5"
   config.libraries.heroicons.outline.default.data = {}
 
-  config.libraries.heroicons.mini.default.css = "w-5 h-5"
+  config.libraries.heroicons.mini.default.css = "size-5"
   config.libraries.heroicons.mini.default.data = {}
 
-  config.libraries.heroicons.micro.default.css = "w-4 h-4"
+  config.libraries.heroicons.micro.default.css = "size-4"
   config.libraries.heroicons.micro.default.data = {}
 end
 ```
