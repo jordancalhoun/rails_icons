@@ -50,7 +50,7 @@ class RailsIcons::Icon
   def set
     return @set if @set.present?
 
-    RailsIcons.configuration.default_set
+    RailsIcons.configuration.default_variant
   end
 
   def default_css
