@@ -41,13 +41,14 @@ module RailsIcons
         source = File.join(@temp_set_directory, variant_source_path)
         destination = File.join(@temp_set_directory, variant_name.to_s)
 
+        # Whitelist variant directory if present in original_set_list to prevent deletion
+        original_set_list.delete(variant_name.to_s)
+
         raise "Failed to find the icons directory: '#{source}'" unless Dir.exist?(source)
 
         move_icons(source, destination)
       end
 
-      # Remove everything in @temp_set_directory that was originally there
-      # TODO: Edge case: The variant for the icons name is the same as a folder that already exists, this will delete the variant on clean up.  Update method check against the variant directories and ignore them on removal.
       remove_files_and_folders(original_set_list)
       say "Icon variants filtered successfully.", :green
     end
