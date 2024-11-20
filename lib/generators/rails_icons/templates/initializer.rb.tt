@@ -1,18 +1,20 @@
 RailsIcons.configure do |config|
-  # Set the default set for the library
+  # Set the default library, see all first-party supported libraries:
+  # https://github.com/Rails-Designer/rails_icons?tab=readme-ov-file#supported-libraries
+  #
   config.default_library = "heroicons" # https://heroicons.com/
-  config.default_set = "outline" # other sets for Heroicons are: solid, mini, micro
+  config.default_variant = "outline" # other variant for Heroicons are: solid, mini, micro
 
-  config.libraries.heroicons.solid.default.css = "w-6 h-6"
+  config.libraries.heroicons.solid.default.css = "size-6"
   config.libraries.heroicons.solid.default.data = {}
 
-  config.libraries.heroicons.outline.default.css = "w-6 h-6"
+  config.libraries.heroicons.outline.default.css = "size-6"
   config.libraries.heroicons.outline.default.stroke_width = "1.5"
   config.libraries.heroicons.outline.default.data = {}
 
-  config.libraries.heroicons.mini.default.css = "w-5 h-5"
+  config.libraries.heroicons.mini.default.css = "size-5"
   config.libraries.heroicons.mini.default.data = {}
 
-  config.libraries.heroicons.micro.default.css = "w-4 h-4"
+  config.libraries.heroicons.micro.default.css = "size-4"
   config.libraries.heroicons.micro.default.data = {}
 end
