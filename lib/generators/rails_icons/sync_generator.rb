@@ -31,6 +31,14 @@ module RailsIcons
           outline: "icons"
         }
       }
+      # Template:
+      # set_name: {
+      #   name: "set_name"
+      #   url: "Publicly Acessible URL to Repository",
+      #   variants: {
+      #     variant_name: "relative/path/to/icon/variant/folder"
+      #   }
+      # }
     }.freeze
 
     argument :libraries, type: :array, default: [], banner: "heroicons lucide tabler"
