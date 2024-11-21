@@ -68,10 +68,10 @@ module RailsIcons
 
       IconSyncEngine.new(temp_icons_directory, set).sync
 
-      icon_set_path = File.join(temp_icons_directory, set_name)
+      icon_set_path = File.join(temp_icons_directory, set[:name])
 
       if Dir.exist?(icon_set_path)
-        copy_icon_set(set_name, icon_set_path)
+        copy_icon_set(set[:name], icon_set_path)
       else
         log_icon_set_not_found(set_name)
       end
